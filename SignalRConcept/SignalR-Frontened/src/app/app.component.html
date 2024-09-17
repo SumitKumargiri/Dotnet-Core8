@@ -1,0 +1,11 @@
+<div class="container">
+  <input [(ngModel)]="username" placeholder="Username" />
+  <input [(ngModel)]="message" placeholder="Message" />
+  <button (click)="sendMessage()">Send</button>
+
+  <ul>
+    <li *ngFor="let msg of messages">
+      <strong>{{ msg.username }} </strong> ({{ msg.connectionid }}):{{ msg.message }}
+    </li>
+  </ul>
+</div>

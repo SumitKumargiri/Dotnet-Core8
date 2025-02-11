@@ -1,0 +1,63 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 w-75">
+      <h2 class="text-center mb-4">Update Employee</h2>
+      
+      <form (ngSubmit)="updateEmployee()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">First Name:</label>
+            <input type="text" class="form-control" [(ngModel)]="employee.firstname" name="firstname" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Last Name:</label>
+            <input type="text" class="form-control" [(ngModel)]="employee.lastname" name="lastname" required>
+          </div>
+        </div>
+    
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Date of Birth:</label>
+            <input type="date" class="form-control" [(ngModel)]="employee.dob" name="dob" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Gender:</label>
+            <input type="text" class="form-control" [(ngModel)]="employee.gender" name="gender">
+          </div>
+        </div>
+    
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Qualification:</label>
+            <input type="text" class="form-control" [(ngModel)]="employee.qualification" name="qualification">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control" [(ngModel)]="employee.email" name="email" required>
+          </div>
+        </div>
+    
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Phone Number:</label>
+            <input type="number" class="form-control" [(ngModel)]="employee.phonenumber" name="phonenumber">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Is Active:</label>
+            <input type="checkbox" class="form-check-input" [(ngModel)]="employee.isactive" name="isactive">
+          </div>
+        </div>
+    
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary w-45 updatedata">
+            <i class="bi bi-save"></i> Update
+          </button>
+          <button type="button" class="btn btn-danger w-45 cancledata" routerLink="/listdata">
+            <i class="bi bi-x-circle"></i> Cancel
+          </button>
+        </div>
+      </form>
+    
+      <p class="message text-success mt-3" *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
+  

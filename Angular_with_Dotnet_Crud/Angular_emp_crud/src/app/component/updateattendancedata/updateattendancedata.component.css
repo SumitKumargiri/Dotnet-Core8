@@ -1,0 +1,9 @@
+.card {
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .btn {
+    font-weight: bold;
+  }
+  

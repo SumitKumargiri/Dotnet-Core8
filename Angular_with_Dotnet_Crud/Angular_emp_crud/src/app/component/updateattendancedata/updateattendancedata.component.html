@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4 text-primary">Update Attendance</h2>
+
+    <!-- Hidden Emp ID -->
+    <input type="hidden" [(ngModel)]="attendanceData.empid">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="fw-bold">First Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="attendanceData.firstname" placeholder="Enter First Name">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="fw-bold">Last Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="attendanceData.lastname" placeholder="Enter Last Name">
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="fw-bold">Time In:</label>
+          <input type="datetime-local" class="form-control" [(ngModel)]="attendanceData.timein">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="fw-bold">Time Out:</label>
+          <input type="datetime-local" class="form-control" [(ngModel)]="attendanceData.timeout">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-primary me-2 px-4" (click)="updateAttendance()">
+        <i class="fas fa-save"></i> Update Attendance
+      </button>
+      <button class="btn btn-danger px-4" routerLink="/">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+    </div>
+
+    <div *ngIf="attendanceData.total > 0" class="alert alert-info mt-4">
+      <h4 class="text-center">Calculated Details:</h4>
+      <p><strong>Total Hours Worked:</strong> {{ attendanceData.total }} hrs</p>
+      <p><strong>Status:</strong> {{ attendanceData.status }}</p>
+    </div>
+  </div>
+</div>

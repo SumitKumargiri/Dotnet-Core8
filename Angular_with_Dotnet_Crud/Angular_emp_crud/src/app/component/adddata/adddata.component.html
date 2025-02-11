@@ -1,0 +1,65 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 w-50">
+      <h2 class="text-center mb-4">Insert Employee</h2>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.firstname" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.lastname" required>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" [(ngModel)]="employee.dob" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Gender</label>
+          <select class="form-select" [(ngModel)]="employee.gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Female">Other</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Qualification</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.qualification">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="employee.email" required>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Phone Number</label>
+          <input type="number" class="form-control" [(ngModel)]="employee.phonenumber">
+        </div>
+        <div class="col-md-6 form-check mt-4">
+          <input type="checkbox" class="form-check-input" [(ngModel)]="employee.isactive">
+          <label class="form-check-label">Active</label>
+        </div>
+      </div>
+  
+      <div class="d-flex justify-content-between ">
+        <button class="btn btn-success w-45 insertdata" (click)="insertEmployee()">
+          <i class="bi bi-save"></i> Insert Employee
+        </button>
+        <button class="btn btn-danger w-45 cancledata" routerLink="/listdata">
+          <i class="bi bi-x-circle"></i> Cancel
+        </button>
+      </div>
+  
+      <p *ngIf="message" class="text-success text-center mt-3">{{ message }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3 employeelist">
+    <h2>Employee List</h2>
+    <button class="btn btn-primary" routerLink="/adddata">
+      <i class="bi bi-plus-lg"></i> Add Employee
+    </button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Qualification</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Active</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.empid }}</td>
+          <td>{{ emp.firstname }}</td>
+          <td>{{ emp.lastname }}</td>
+          <td>{{ emp.dob | date }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>{{ emp.qualification }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.phonenumber }}</td>
+          <td>
+            <span class="badge" [ngClass]="emp.isactive ? 'bg-success' : 'bg-danger'">
+              {{ emp.isactive ? 'Yes' : 'No' }}
+            </span>
+          </td>
+          <td>
+            <button class="btn btn-warning btn-sm me-2" (click)="editEmployee(emp.empid)">
+              <i class="bi bi-pencil-square"></i> Update
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteEmployee(emp.empid)">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="attendance">
+    <app-attendancedata></app-attendancedata>
+  </div>
+</div>

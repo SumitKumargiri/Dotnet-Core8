@@ -1,0 +1,135 @@
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sender-panel {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .sender-panel input {
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .sender-panel button {
+    padding: 10px 20px;
+    margin-left: 10px;
+  }
+  
+  .chat-container {
+    display: flex;
+  }
+  
+  .receiver-list {
+    width: 30%;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .receiver-list h3 {
+    margin-bottom: 10px;
+  }
+  
+  .receiver-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .receiver-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .receiver-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .chat-box {
+    width: 70%;
+    padding: 10px;
+  }
+  
+  .chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .profile-img-large {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+  }
+  
+  .sent {
+    text-align: right;
+    background: #dcf8c6;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  
+  .received {
+    text-align: left;
+    background: #ffffff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  
+  .message-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .message-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .message-input button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-img-large {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="sender-panel" *ngIf="!senderNameEntered">
+    <h2>Enter Your SenderName</h2>
+    <input type="text" [(ngModel)]="senderName" placeholder="Enter your sendername..." />
+    <button (click)="loadChatList()">Continue</button>
+  </div>
+
+  <div class="chat-container" *ngIf="senderNameEntered">
+    <div class="receiver-list">
+      <h3>Chat List</h3>
+      <ul>
+        <li *ngFor="let chat of chatList" (click)="showChat(chat.receiverName)">
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-male-user-profile-vector-illustration-isolated-background-man-profile-sign-business-concept_157943-38764.jpg?semt=ais_hybrid" alt="Profile" class="profile-img" />
+          {{ chat.receiverName }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="chat-box" *ngIf="selectedReceiver">
+      <div class="chat-header">
+        <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-male-user-profile-vector-illustration-isolated-background-man-profile-sign-business-concept_157943-38764.jpg?semt=ais_hybrid" alt="Profile" class="profile-img-large" />
+        <h3>{{ selectedReceiver }}</h3>
+      </div>
+
+      <div class="messages">
+        <div *ngFor="let msg of selectedChat" [ngClass]="{'sent': msg.senderName === senderName, 'received': msg.senderName !== senderName}">
+          <p>{{ msg.message }}</p>
+        </div>
+      </div>
+
+      <!-- <textarea readonly>{{ selectedChat | json }}</textarea> -->
+      <div class="message-input">
+        <input type="text" [(ngModel)]="messageText" placeholder="Type a message..." />
+        <button (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
